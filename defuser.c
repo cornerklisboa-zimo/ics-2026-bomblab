@@ -240,8 +240,7 @@ int solve_secret(uint64_t challenge, uint64_t context, char *out, size_t cap) {
 
     uint32_t c = b ^ (r8d + a + UINT32_C(0x3406) + (esi >> 5));
 
-    // 前32个字符随便填，"OPEN"必须在第32字节位置（即总共36字节前缀）
     snprintf(out, cap, "12345678901234567890123456789012OPEN %u %u %u", a, b, c);    
-    
+
     return 0;
 }
